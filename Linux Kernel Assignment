@@ -1,0 +1,19 @@
+Problem #1     Block System call : 
+
+
+
+
+
+
+Problem #2 :  play with directory
+
+ 1 create a directory without name from command line
+ 2 create a directory with name "-okgoogle"
+ 
+ 1 mkdir " " : this will create a directory without name(by giving space bar in between "") as name and won't be visible in HOME folder in GUI form.
+ 2 directory whose name starts with - (eg -okgoogle) in bash,If we are try so bash will treat the name as command line argument and we will get the error as
+ mkdir: invalid option -- 'o'
+ so Prefix the directory name with a ./ to avoid having it interpreted as an option:
+ mkdir ./-okgoogle
+ Alternatively, insert the argument -- (two dashes), which causes all arguments following it to be interpreted as file names and not as options:
+ mkdir -- -okgoogle
