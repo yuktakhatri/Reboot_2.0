@@ -17,3 +17,53 @@ Problem #2 :  play with directory
  mkdir ./-okgoogle
  Alternatively, insert the argument -- (two dashes), which causes all arguments following it to be interpreted as file names and not as options:
  mkdir -- -okgoogle
+
+
+Problem #3 :  create a directory structure 
+mkdir -p A/{B/{G/K/reboot.txt,H/J/reboot.txt},C/{I/J/L/reboot.txt},D/{F/L/reboot.txt,E/M/reboot.txt}}
+tree A
+
+Problem #4.  share and files and folder 
+
+
+ create two users name jack and Jill  from command line
+create all the data under home directory of each users 
+login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
+from jack user also create two directories name jack1 & jack2 
+now login from Jill user and create a file. Jill.txt using vim editor and write "hey jiil"
+from Jill also create two directoires named jill1 & jill2 
+
+Important :  swap these files and directories in between users  and to swap don't use root account.
+
+1.Logged into root account then:
+adduser jack
+passwd jack
+adduser jill
+passwd jill
+
+2.Logged into jack account:
+touch jack.txt
+vim jack.txt
+   -> press i to insert text
+   -> type "hello jack"
+   -> press esc then : then wq then enter
+mkdir jack1 jack2
+
+3.Logged into jill account:
+touch jill.txt
+vim jill.txt
+   -> press i to insert text
+   -> type "heyy jill"
+   -> press esc then : then wq then enter
+ mkdir jill1 jill2
+ 
+ 4. sudo cp /home/jack/jack.txt /home/jill/jill.txt
+    sudo cp /home/jack/jack1 /home/jill/jill1
+    sudo cp /home/jack/jack2 /home/jill/jill2
+    
+    sudo cp /home/jill/jill.txt /home/jack/jack.txt
+    sudo cp /home/jill/jill1 /home/jack/jack1
+    sudo cp /home/jill/jill2 /home/jack/jack2
+    
+
+   
