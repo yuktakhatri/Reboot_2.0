@@ -42,6 +42,7 @@ adduser jill
 passwd jill
 
 2.Logged into jack account:
+chmod 0777 /home/jack
 touch jack.txt
 vim jack.txt
    -> press i to insert text
@@ -50,6 +51,7 @@ vim jack.txt
 mkdir jack1 jack2
 
 3.Logged into jill account:
+chmod 0777 /home/jill
 touch jill.txt
 vim jill.txt
    -> press i to insert text
@@ -57,13 +59,15 @@ vim jill.txt
    -> press esc then : then wq then enter
  mkdir jill1 jill2
  
- 4. sudo cp /home/jack/jack.txt /home/jill/jill.txt
-    sudo cp /home/jack/jack1 /home/jill/jill1
-    sudo cp /home/jack/jack2 /home/jill/jill2
+ 4. cp -r /home/jack/jack.txt /home/jill/jill.txt  
+    #-r is used because we are ommiting directory and copy them recursively
+    cp -r /home/jack/jack1 /home/jill/jill1
+    cp -r /home/jack/jack2 /home/jill/jill2
     
-    sudo cp /home/jill/jill.txt /home/jack/jack.txt
-    sudo cp /home/jill/jill1 /home/jack/jack1
-    sudo cp /home/jill/jill2 /home/jack/jack2
+    su Jack
+    cp -r /home/jill/jill.txt /home/jack/jack.txt
+    cp -r /home/jill/jill1 /home/jack/jack1
+    cp -r /home/jill/jill2 /home/jack/jack2
     
 
    
