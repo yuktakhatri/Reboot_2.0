@@ -69,5 +69,14 @@ vim jill.txt
     cp -r /home/jill/jill1 /home/jack/jack1
     cp -r /home/jill/jill2 /home/jack/jack2
     
+    
+   Question : How to delete a particular entry from History without showing the command for that in history?
+   vim .bashrc
+   ##Under export section
+   export HISTIGNORE="history [-d offset] [n]"
+   esc:wq
+   ## now fire history -d [n] 
+   ## here n is the no. of line on which command to be deleted is present
+   ##now fire history
 
    
