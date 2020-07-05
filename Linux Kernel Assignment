@@ -102,6 +102,6 @@ Problem #5 :  play with files and directories
 
 vim .bashrc #open .bashrc file and edit
 stty intr ^M #insert this to set terminal device i.e. the role of interrupt is assigned to enter key so whenever we fire a command and hit enter no output is shown.
-
+             ## now for again normalizing everything alternate for enter key is Ctrl+J use that and set stty intr ^C 
 
 
