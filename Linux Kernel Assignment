@@ -26,7 +26,7 @@ tree A
 Problem #4.  share and files and folder 
 
 
- create two users name jack and Jill  from command line
+create two users name jack and Jill  from command line
 create all the data under home directory of each users 
 login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
 from jack user also create two directories name jack1 & jack2 
@@ -70,13 +70,38 @@ vim jill.txt
     cp -r /home/jill/jill2 /home/jack/jack2
     
     
-   Question : How to delete a particular entry from History without showing the command for that in history?
+   ##Question : How to delete a particular entry from History without showing the command for that in history?
    vim .bashrc
-   ##Under export section
+                 ##Under export section
    export HISTIGNORE="history [-d offset] [n]"
    esc:wq
-   ## now fire history -d [n] 
-   ## here n is the no. of line on which command to be deleted is present
-   ##now fire history
+                 ## now fire history -d [n] 
+                 ## here n is the no. of line on which command to be deleted is present
+                 ##now fire history
 
+
+Problem #5 :  play with files and directories 
+
+  ##create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
+  ##create  4  directories   aa aaa aaaa  under  /tmp directory 
+  ##give ls command to  list the content of  /tmp directory 
+  ##make sure it will only list the content (file|directory)  having 2 char in their name.
+  
+  cd /tmp                            ## change directory from home to /tmp
+  touch abc.txt ok/ fine g.txt       ## make files ,if there is space in between a file name we use '/'
+  mkdir aa aaa aaaa                  ## make directories
+  ls -d ??                           ## -d option is used to show directories as well with files and to differentiate between file and directories as well
+                                     ##'?' is a wild card character used to represent a single character it is used twice to search for the 2 characters.
    
+   
+   problem #6:  run command without any output 
+
+  ##open terminal and type any command 
+  ##once you press enter your output of given command must not  print
+  ##you are not allowed to redirect output anywhere 
+
+vim .bashrc #open .bashrc file and edit
+stty intr ^M #insert this to set terminal device i.e. the role of interrupt is assigned to enter key so whenever we fire a command and hit enter no output is shown.
+
+
+
