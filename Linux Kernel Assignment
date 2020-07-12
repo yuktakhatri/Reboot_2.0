@@ -103,5 +103,65 @@ Problem #5 :  play with files and directories
 vim .bashrc #open .bashrc file and edit
 stty intr ^M #insert this to set terminal device i.e. the role of interrupt is assigned to enter key so whenever we fire a command and hit enter no output is shown.
              ## now for again normalizing everything alternate for enter key is Ctrl+J use that and set stty intr ^C 
+OR
+set -n <command> ##here the command is read by the system but no execution takes place
+
+
+problem #7 :    create a shell script 
+
+## create a shell script named /root/delvex.sh 
+## make sure it will run /bin/sh shell 
+## a user will be running this script my using a command name opensource
+##  when a user  run like  "opensource  time" it must give current time only
+##  when it runs like "opensource user"  it will give list of interactive shell users only
+##  when run like "opensource 100"  it must print "Hello Delvex" 100 times in interval of 1 sec
+##  if runs like  "opensource windows"  then it must shutdown OS
+##  if run opensource command without any parameter  then it must show out --
+             i)   name of kernel 
+             ii)   version of kernel 
+             iii)  current date in the format of  /DD/MM/YY
+             iv)  name of OS 
+             v)   last reboot time 
+ 
+ ## Note:    each output for last option must be in a separate line   
+ 
+ ##Solution:
+            vim /root/delvex.sh
+             ##Script
+             #!/bin/sh
+             if [[ $1 == "time" ]]
+             then
+                    echo " current time is `date +%T`"
+             elif [[ $1 == "user" ]]
+             then  
+                    echo "list of user is `cat /etc/passwd | grep -F :/bin/bash`"
+             elif [[ $1 -eq 100 ]]
+             then
+                    for i in {1..100}
+                    do 
+                         echo "hello delvex"
+                         sleep 1
+                    done
+             elif [[ $1 == "windows" ]]
+             then
+                    shutdown -P
+             
+             else
+                   echo " name of kernel: `uname -s` "
+                   echo " version of kernel: `uname -v` "
+                   echo " name of OS: `uname -o`"
+                   echo " current date: `date +%d/%m/%y` "
+                   echo " last reboot time: `who -b` "
+             fi
+             
+        chmod +x /root/delvex.sh
+        ./delvex.sh
+        vim /usr/bin/opensource
+                ##paste the path of /root/delvex.sh in this file
+        cp -r /root/delvex.sh  /usr/bin/opensource
+                
+                
+             
+            
 
 
