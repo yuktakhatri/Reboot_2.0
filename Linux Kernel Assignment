@@ -158,7 +158,27 @@ problem #7 :    create a shell script
         ./delvex.sh
         vim /usr/bin/opensource
                 ##paste the path of /root/delvex.sh in this file
-        cp -r /root/delvex.sh  /usr/bin/opensource
+        cp -r /root/delvex.sh  /usr/bin/opensource 
+        
+  Problem #8:    create a user will default settings
+ 
+ ## create a user name  delvex  and password of this user will be fedora
+##  when user got created below listed things will come by default
+##  history size will be 5000 
+## history file will be  /home/delvex/myhist.txt
+##  default shell will be  /bin/sh 
+
+ Solution  vim /etc/skel/.bashrc ##in the root user ##The files in the /etc/skel directory generally provide global settings.
+                                                    ##If an equivalent file exists in your home directory it may override the global settings.
+                                                    ##If you want each new user to have this file automatically
+           export HISTSIZE=5000
+           export HISTFILE=home/myhist.txt
+           export SHELL=/bin/sh
+
+           ##Login to delvex
+           adduser delvex
+           passwd delvex
+           
                 
                 
              
